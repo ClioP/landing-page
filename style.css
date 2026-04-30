@@ -213,6 +213,35 @@
 }
 
 @layer layout {
+  .container {
+    width: min(100% - (var(--space-page-x) * 2), var(--size-container-wide));
+    margin-inline: auto;
+  }
+
+  .container-narrow {
+    width: min(100% - (var(--space-page-x) * 2), var(--size-container-narrow));
+    margin-inline: auto;
+  }
+
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--cluster-gap, var(--space-400));
+  }
+
+  .split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-layout);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap-grid);
+  }
 }
 
 @layer components {

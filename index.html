@@ -16,16 +16,16 @@
   </head>
 
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
+    <a class="skip-link button button-ghost" href="#main">Skip to main content</a>
 
     <header class="site-header">
-      <div>
-        <a href="index.html">
+      <div class="container split">
+        <a class="site-logo" href="index.html" aria-label="live. laugh. loop. home">
           <img src="assets/LandingPage-Logo.svg" alt="" width="180" height="35" />
         </a>
 
-        <nav class="site-nav">
-          <ul class="site-nav-list">
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <ul class="cluster site-nav-list">
             <li><a class="nav-link" href="#knot-stack">Knot Stack</a></li>
             <li><a class="nav-link" href="#tension-tested">Tension Tested</a></li>
             <li><a class="nav-link" href="#get-tangled">Get Tangled</a></li>
@@ -36,11 +36,11 @@
 
     <main id="main">
       <section class="hero">
-        <div class="hero-layout">
+        <div class="container split">
           <div class="hero-content">
-            <h1>Disrupting the String Industry.</h1>
+            <h1>Disrupting the <span class="text-highlight">String</span> Industry.</h1>
             <p>Leverage our proprietary rope-interlocking algorithms to optimise load-bearing attachment workflows at scale.</p>
-            <a class="button" href="404.html">Learn the Ropes</a>
+            <a class="button button-primary" href="404.html">Learn the Ropes</a>
           </div>
 
           <img class="hero-image" src="assets/LandingPage-Hero.jpg" alt="Rope about to break" width="525" height="300" />
@@ -48,37 +48,39 @@
       </section>
 
       <section class="features" id="knot-stack">
-        <div>
+        <div class="container-narrow">
           <h2>Enterprise-grade knot solutions.</h2>
 
-          <article class="feature-card">
-            <img class="card-image" src="assets/LandingPage-Features-FrictionOptimizedUI.jpg" alt="A closeup view of a rope section showing its structure" width="170" height="170" />
-            <h3 class="card-title">Friction-Optimized UI</h3>
-            <p class="card-text">Our knots feature 99.9% uptime against intense, spacetime-bending gravitational pull.</p>
-          </article>
+          <div class="features-grid">
+            <article class="card">
+              <img class="card-image" src="assets/LandingPage-Features-FrictionOptimizedUI.jpg" alt="A closeup view of a rope section showing its structure" width="170" height="170" />
+              <h3 class="card-title">Friction-Optimized UI</h3>
+              <p class="card-text">Our knots feature 99.9% uptime against intense, spacetime-bending gravitational pull.</p>
+            </article>
 
-          <article class="feature-card">
-            <img class="card-image" src="assets/LandingPage-Features-Cross-PlatformSupport.jpg" alt="Twisted ropes forming a circular pattern on a dark textured surface" width="170" height="170" />
-            <h3 class="card-title">Cross-Platform Support</h3>
-            <p class="card-text">Works on nylon, polyester, and even that weird plastic twine you found in the garage.</p>
-          </article>
+            <article class="card">
+              <img class="card-image" src="assets/LandingPage-Features-Cross-PlatformSupport.jpg" alt="Twisted ropes forming a circular pattern on a dark textured surface" width="170" height="170" />
+              <h3 class="card-title">Cross-Platform Support</h3>
+              <p class="card-text">Works on nylon, polyester, and even that weird plastic twine you found in the garage.</p>
+            </article>
 
-          <article class="feature-card">
-            <img class="card-image" src="assets/LandingPage-Features-OpenSourceTying.jpg" alt="A closeup view of braided vibrant ropes" width="170" height="170" />
-            <h3 class="card-title">Open Source Tying</h3>
-            <p class="card-text">Community-vetted cinching methods and anchoring systems for serious loop practitioners.</p>
-          </article>
+            <article class="card">
+              <img class="card-image" src="assets/LandingPage-Features-OpenSourceTying.jpg" alt="A closeup view of braided vibrant ropes" width="170" height="170" />
+              <h3 class="card-title">Open Source Tying</h3>
+              <p class="card-text">Community-vetted cinching methods and anchoring systems for serious loop practitioners.</p>
+            </article>
 
-          <article class="feature-card">
-            <img class="card-image" src="assets/LandingPage-Features-LowLatencyTension.jpg" alt="A closeup of a bowstrings cross-sectional view showing its multiple strands and construction" width="170" height="170" />
-            <h3 class="card-title">Low-Latency Tension</h3>
-            <p class="card-text">Rapid-deployment knotting for mission-critical hanging and improvised household fixes.</p>
-          </article>
+            <article class="card">
+              <img class="card-image" src="assets/LandingPage-Features-LowLatencyTension.jpg" alt="A closeup of a bowstrings cross-sectional view showing its multiple strands and construction" width="170" height="170" />
+              <h3 class="card-title">Low-Latency Tension</h3>
+              <p class="card-text">Rapid-deployment knotting for mission-critical hanging and improvised household fixes.</p>
+            </article>
+          </div>
         </div>
       </section>
 
       <section class="quote" id="tension-tested">
-        <div>
+        <div class="container-narrow">
           <blockquote>
             <p class="quote-text">I switched my entire household over to the live. laugh. loop. infrastructure. My curtains have never been more 'scalable'.</p>
           </blockquote>
@@ -87,19 +89,21 @@
       </section>
 
       <section class="cta" id="get-tangled">
-        <div>
+        <div class="container split">
           <div class="cta-content">
             <h2 class="cta-title">It’s time to get tangled.</h2>
             <p class="cta-text">Join Paulie and 342 other cordage enthusiasts already optimising their attachment workflow.</p>
           </div>
 
-          <button class="button" type="button">Tie the knot!</button>
+          <button class="button button-ghost" type="button">Tie the knot!</button>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year">2026</span> Clio P. The Odin Project - Foundations</p>
+      <div class="container">
+        <p>© <span id="year">2026</span> Clio P. The Odin Project - Foundations</p>
+      </div>
     </footer>
 
     <script src="script.js" defer></script>
