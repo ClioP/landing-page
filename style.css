@@ -187,11 +187,6 @@
     scroll-margin-block-start: calc(var(--space-chrome-y) + var(--space-400));
   }
 
-  :focus-visible {
-    outline: 2px solid var(--color-focus, currentColor);
-    outline-offset: 2px;
-  }
-
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -210,6 +205,61 @@
 }
 
 @layer elements {
+  img {
+    font-style: italic;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: var(--leading-200);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+    transition:
+      color var(--t-300, 0.3s) var(--ease-default, ease-in-out),
+      text-decoration-color var(--t-300, 0.3s) var(--ease-default, ease-in-out);
+
+    &:hover,
+    &:active,
+    &:focus-visible,
+    &[aria-current='page'] {
+      color: var(--color-text-complementary);
+    }
+
+    &:not([class]) {
+      text-decoration: underline;
+      text-decoration-skip-ink: auto;
+    }
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px dashed var(--color-focus);
+    outline-offset: var(--space-focus);
+  }
+
+  ::selection {
+    background-color: var(--color-surface-complementary);
+    color: var(--color-text-on-complementary);
+  }
 }
 
 @layer layout {
