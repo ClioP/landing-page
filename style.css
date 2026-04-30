@@ -154,10 +154,10 @@
     --space-panel-x: clamp(2rem, 1rem + 6vw, 7.5rem);
     --space-panel-y: clamp(2rem, 1rem + 4vw, 3.75rem);
 
-    --gutter: clamp(1rem, 0.5rem + 4vw, 2rem);
+    --gutter: clamp(1rem, 0.5rem + 4vw, 1.5rem);
 
     --gap-layout: clamp(2rem, 1rem + 4vw, 3rem);
-    --gap-grid: clamp(1.5rem, 1rem + 3vw, 2.5rem);
+    --gap-grid: clamp(0.5rem, 1rem + 2vw, 2.5rem);
 
     /* Border radius */
     --radius-300: 0.25rem; /* 4px - small controls */
@@ -290,12 +290,26 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--gap-layout);
+
+    @media (width < 64rem) {
+      flex-direction: column;
+    }
   }
 
   .features-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    justify-items: center;
     gap: var(--gap-grid);
+
+    @media (width < 55rem) {
+      grid-template-columns: repeat(2, minmax(0, 14rem));
+    }
+
+    @media (width < 30rem) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .panel {
@@ -337,7 +351,7 @@
     color: var(--color-text-on-dark);
 
     h1 {
-      max-width: 14ch;
+      max-width: 100%;
       margin-block-end: var(--space-300);
       font-size: var(--font-700);
       font-weight: var(--font-w-900);
@@ -352,10 +366,12 @@
 
     .hero-content {
       flex: 1;
+      width: 100%;
     }
 
     .hero-image {
       flex: 1;
+      width: 100%;
       border-radius: var(--radius-300);
     }
   }
@@ -372,6 +388,7 @@
     }
 
     .card {
+      max-width: 15rem;
       text-align: center;
     }
 
@@ -402,6 +419,7 @@
       font-weight: var(--font-w-300);
       font-style: italic;
       line-height: var(--leading-300);
+      margin-block-end: var(--space-200);
     }
 
     .quote-source {
@@ -420,15 +438,25 @@
       color: var(--color-text-on-accent);
     }
 
+    .cta-content {
+      width: 100%;
+    }
+
     .cta-title {
       font-size: var(--font-500);
       margin-block-end: var(--space-300);
     }
 
     .cta-text {
-      width: clamp(45ch, 90%, 55ch);
+      max-width: clamp(45ch, 90%, 55ch);
       font-size: var(--font-400);
       line-height: var(--leading-300);
+    }
+
+    @media (width < 64rem) {
+      .button {
+        align-self: flex-start;
+      }
     }
   }
 
