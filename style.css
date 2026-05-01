@@ -165,6 +165,7 @@
     --radius-500: 0.75rem; /* 12px - larger panels */
 
     /* Transitions */
+    --t-200: 0.2s;
     --t-300: 0.3s;
     --ease-default: ease-in-out;
   }
@@ -351,10 +352,14 @@
 
     @media (width < 48rem) {
       width: 100%;
+      max-height: 50vh;
       padding: var(--space-500);
       border-radius: var(--radius-300);
       background-color: var(--color-bg-light);
       color: var(--color-text);
+      transition:
+        padding var(--t-300) var(--ease-default),
+        max-height var(--t-300) var(--ease-default);
 
       .site-nav-list {
         justify-content: center;
@@ -576,7 +581,7 @@
     background-color: var(--color-surface-accent);
     border-radius: var(--radius-300);
     line-height: 0;
-    transition: background-color var(--t-100) var(--ease-default);
+    transition: background-color var(--t-200) var(--ease-default);
 
     &:active {
       background-color: var(--color-surface-complementary);
@@ -611,7 +616,8 @@
 
     @media (width < 48rem) {
       &[aria-expanded='false'] + nav {
-        display: none;
+        max-height: 0;
+        padding: 0;
       }
     }
   }
