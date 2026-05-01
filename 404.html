@@ -16,26 +16,45 @@
   </head>
 
   <body>
-    <header>
-      <div>
-        <a href="index.html">
+    <a class="skip-link button button-ghost" href="#main">
+      <span class="button-text">Skip to main content</span>
+    </a>
+
+    <header class="site-header">
+      <div class="container split">
+        <a class="site-logo" href="index.html" aria-label="live. laugh. loop. home">
           <img src="assets/LandingPage-Logo.svg" alt="" width="180" height="35" />
         </a>
 
-        <nav>
-          <ul>
-            <li><a href="index.html#knot-stack">Knot Stack</a></li>
-            <li><a href="index.html#tension-tested">Tension Tested</a></li>
-            <li><a href="index.html#get-tangled">Get Tangled</a></li>
+        <button class="site-nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+          <span class="site-nav-toggle-text visually-hidden">Menu</span>
+
+          <svg class="nav-icon icon-menu" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+
+          <svg class="nav-icon icon-close" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <ul class="cluster site-nav-list">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="index.html#knot-stack">Knot Stack</a></li>
+            <li><a class="nav-link" href="index.html#tension-tested">Tension Tested</a></li>
+            <li><a class="nav-link" href="index.html#get-tangled">Get Tangled</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main></main>
+    <main id="main"></main>
 
-    <footer>
-      <div>© <span id="year">2026</span> Clio P. The Odin Project - Foundations</div>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year">2026</span> Clio P. The Odin Project - Foundations</p>
+      </div>
     </footer>
 
     <script src="script.js" defer></script>

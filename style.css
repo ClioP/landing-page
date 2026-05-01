@@ -177,6 +177,11 @@
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+
+    &:has(#join-dialog[open]) {
+      overflow: hidden;
+    }
   }
 
   body {
@@ -629,6 +634,37 @@
 
     &:focus {
       top: var(--gutter);
+    }
+  }
+
+  .join-modal {
+    padding: var(--space-panel-y) var(--space-panel-x);
+    background-color: var(--color-surface-dark);
+    color: var(--color-text-on-dark);
+    border-radius: var(--radius-500);
+    border: 5px solid var(--color-border-complementary);
+
+    .close-modal {
+      position: absolute;
+      top: var(--space-300);
+      right: var(--space-300);
+      width: 2.5rem;
+      height: 2.5rem;
+      stroke: var(--color-text-complementary);
+      stroke-width: 3px;
+    }
+
+    .modal-title {
+      margin-block-end: var(--space-200);
+    }
+
+    .modal-text {
+      margin-block-end: var(--space-500);
+    }
+
+    &::backdrop {
+      background-color: oklch(from var(--color-surface-dark) l c h / 0.9);
+      backdrop-filter: blur(4px);
     }
   }
 }

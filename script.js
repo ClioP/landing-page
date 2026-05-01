@@ -75,5 +75,40 @@ function initEscapeBlur() {
   });
 }
 
+function initJoinModal() {
+  const joinButton = document.querySelector('#join-button');
+  const joinDialog = document.querySelector('#join-dialog');
+
+  // * Guard
+  // Stop if the open modal button or the dialog are not present on this page.
+  if (!joinButton || !joinDialog) return;
+
+  const closeDialog = joinDialog.querySelector('#close-dialog');
+  const modalLink = joinDialog.querySelector('.button');
+
+  // * Guard
+  // Stop if the close modal button or the link button are not present on this page.
+  if (!closeDialog || !modalLink) return;
+
+  joinButton.addEventListener('click', () => {
+    joinDialog.showModal();
+  });
+
+  closeDialog.addEventListener('click', () => {
+    joinDialog.close();
+  });
+
+  joinDialog.addEventListener('click', (event) => {
+    if (event.target !== joinDialog) return;
+
+    joinDialog.close();
+  });
+
+  modalLink.addEventListener('click', () => {
+    joinDialog.close();
+  });
+}
+
 initMobileNav();
 initEscapeBlur();
+initJoinModal();
