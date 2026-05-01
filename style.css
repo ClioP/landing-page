@@ -561,7 +561,7 @@
         opacity var(--t-300) var(--ease-default);
     }
 
-    &:focus-within {
+    &:focus-visible {
       background-color: var(--color-surface-complementary);
       color: var(--color-text-on-complementary);
       border-color: var(--color-border-complementary);
