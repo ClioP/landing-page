@@ -16,13 +16,27 @@
   </head>
 
   <body>
-    <a class="skip-link button button-ghost" href="#main">Skip to main content</a>
+    <a class="skip-link button button-ghost" href="#main">
+      <span class="button-text">Skip to main content</span>
+    </a>
 
     <header class="site-header">
       <div class="container split">
         <a class="site-logo" href="index.html" aria-label="live. laugh. loop. home">
           <img src="assets/LandingPage-Logo.svg" alt="" width="180" height="35" />
         </a>
+
+        <button class="site-nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+          <span class="site-nav-toggle-text visually-hidden">Menu</span>
+
+          <svg class="nav-icon icon-menu" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+
+          <svg class="nav-icon icon-close" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
 
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
           <ul class="cluster site-nav-list">
@@ -40,7 +54,9 @@
           <div class="hero-content">
             <h1>Disrupting the <span class="text-highlight">String</span> Industry.</h1>
             <p>Leverage our proprietary rope-interlocking algorithms to optimise load-bearing attachment workflows at scale.</p>
-            <a class="button button-primary" href="404.html">Learn the Ropes</a>
+            <a class="button button-primary" href="404.html">
+              <span class="button-text">Learn the Ropes</span>
+            </a>
           </div>
 
           <img class="hero-image" src="assets/LandingPage-Hero.jpg" alt="Rope about to break" width="525" height="300" />
@@ -95,7 +111,9 @@
             <p class="cta-text">Join Paulie and 342 other cordage enthusiasts already optimising their attachment workflow.</p>
           </div>
 
-          <button class="button button-ghost" type="button">Tie the knot!</button>
+          <button class="button button-ghost" type="button">
+            <span class="button-text">Tie the knot!</span>
+          </button>
         </div>
       </section>
     </main>
