@@ -576,6 +576,11 @@
     background-color: var(--color-surface-accent);
     border-radius: var(--radius-300);
     line-height: 0;
+    transition: background-color var(--t-100) var(--ease-default);
+
+    &:active {
+      background-color: var(--color-surface-complementary);
+    }
 
     .nav-icon {
       width: 2rem;
@@ -589,6 +594,8 @@
     }
 
     &[aria-expanded='true'] {
+      background-color: var(--color-surface-complementary);
+
       .icon-menu {
         display: none;
       }
