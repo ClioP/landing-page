@@ -112,7 +112,7 @@
             <p class="cta-text">Join Paulie and 342 other cordage enthusiasts already optimising their attachment workflow.</p>
           </div>
 
-          <button class="button button-ghost" id="join-button" type="button">
+          <button class="button button-ghost" id="join-button" type="button" aria-haspopup="dialog">
             <span class="button-text">Tie the knot!</span>
           </button>
         </div>
@@ -125,14 +125,14 @@
       </div>
     </footer>
 
-    <dialog class="join-modal" id="join-dialog" autofocus>
+    <dialog class="join-modal" id="join-dialog" aria-labelledby="modal-title" autofocus>
       <button class="close-modal" id="close-dialog" type="button" aria-label="Close modal">
         <svg class="icon-close-modal" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
           <path d="M6 6l12 12M18 6L6 18" />
         </svg>
       </button>
 
-      <h2 class="modal-title">You’re officially looped in.</h2>
+      <h2 class="modal-title" id="modal-title">You’re officially looped in.</h2>
 
       <p class="modal-text">No form. No spam. Just a very official confirmation that you clicked the rope button.</p>
 

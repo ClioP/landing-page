@@ -20,28 +20,38 @@ function initMobileNav() {
   // Stop if the controlled nav menu or button text is missing.
   if (!navMenu || !menuText) return;
 
+  const mobileMenuQuery = window.matchMedia('(width < 48rem)');
+
   // * Helper Function
   // Convert the string attribute value to a boolean
-  // and heck whether the menu is currently open.......
+  // and check whether the menu is currently open.
   const isMenuOpen = () => navToggle.getAttribute('aria-expanded') === 'true';
 
   // * Helper Function
-  // Close the menu and reset the button text.
+  // Apply the open/closed menu state to the toggle, label, and nav interaction.
+  // Keeps aria-expanded, accessible text, and nav focusability in sync.
+  const setMenuState = (isOpen) => {
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    menuText.textContent = isOpen ? 'Close menu' : 'Menu';
+    navMenu.inert = mobileMenuQuery.matches && !isOpen;
+  };
+
+  setMenuState(isMenuOpen());
+
+  // Re-check whether the nav should be inert if the viewport crossed the 48rem breakpoint.
+  mobileMenuQuery.addEventListener('change', () => {
+    setMenuState(isMenuOpen());
+  });
+
+  // * Helper Function
+  // Apply the closed menu state.
   const closeMenu = () => {
-    navToggle.setAttribute('aria-expanded', 'false');
-    menuText.textContent = 'Menu';
+    setMenuState(false);
   };
 
   // Toggle menu state when the button is clicked.
   navToggle.addEventListener('click', () => {
-    const isOpen = isMenuOpen();
-
-    // Flip the boolean state and write it back as a string attribute value.
-    navToggle.setAttribute('aria-expanded', String(!isOpen));
-
-    // Update the accessible button text.
-    const newState = !isOpen;
-    menuText.textContent = newState ? 'Close menu' : 'Menu';
+    setMenuState(!isMenuOpen());
   });
 
   const navLinks = navMenu.querySelectorAll('.nav-link');
@@ -59,6 +69,10 @@ function initMobileNav() {
     if (!isEscape || !isOpen) return;
 
     closeMenu();
+    navToggle.focus();
+
+    // Prevent the global Escape blur handler from also running.
+    event.stopImmediatePropagation();
   });
 }
 
