@@ -38,9 +38,15 @@ function initMobileNav() {
 
   setMenuState(isMenuOpen());
 
-  // Re-check whether the nav should be inert if the viewport crossed the 48rem breakpoint.
-  mobileMenuQuery.addEventListener('change', () => {
-    setMenuState(isMenuOpen());
+  // Re-check whether the nav should be inert when the viewport crosses the 48rem breakpoint.
+  mobileMenuQuery.addEventListener('change', (event) => {
+    if (!event.matches) {
+      // Crossed into tablet/desktop: forces the menu closed so state is clean if we return to mobile.
+      setMenuState(false);
+    } else {
+      // Crossed into mobile: applies current state (will set inert correctly).
+      setMenuState(isMenuOpen());
+    }
   });
 
   // * Helper Function
