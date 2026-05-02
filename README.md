@@ -5,15 +5,15 @@ A responsive landing page for a fictional Rope-as-a-Service brand, **live. laugh
 🔗 **[Live demo](https://cliop.github.io/landing-page/)**
 
 <p align="center">
-  <img src="screenshots/desktop.jpg" alt="Desktop view of the live. laugh. loop. landing page" height="400" />
-  <img src="screenshots/mobile.jpg" alt="Mobile view of the live. laugh. loop. landing page" height="400" />
+  <img src="screenshots/desktop.jpg" alt="Desktop view of the live. laugh. loop. landing page" height="350" />
+  <img src="screenshots/mobile.jpg" alt="Mobile view of the live. laugh. loop. landing page" height="350" />
 </p>
 
 ## About
 
 The brief provides a simple desktop landing page mockup and a small colour and font reference. I decided to use the assignment as a controlled practice project rather than only recreating the page at minimum scope. The goal was to stay close to the provided design while practising the kinds of decisions that come up when translating an existing design into a working site: responsive behaviour, accessible interactions, deliberate deviations where the mockup was incomplete, and a small amount of vanilla JavaScript.
 
-This is a static learning project, not a production website. It builds on patterns from an [earlier Foundations project](https://cliop.github.io/odin-recipes/) but is intended to stand on its own.
+This is a static learning project, not a production website. It builds on patterns from an [earlier Foundations project](https://github.com/ClioP/odin-recipes) but is intended to stand on its own.
 
 ### Approach
 
